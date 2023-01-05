@@ -48,3 +48,9 @@ input {
   padding: 5px;
   border-radius: 5px;
 }
+.appointments-container {
+  height: 100vh;
+}
+.starred-button-background {
+  background-color: #9796f0;
+}

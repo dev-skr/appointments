@@ -3,10 +3,13 @@ import './index.css'
 import {format} from 'date-fns'
 
 const AppointmentItem = props => {
-  const {eventType, date, starred} = props
+  const {eventType, date, starred, id, starringItem} = props
   const url = starred
     ? 'https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png'
+  const starItem = () => {
+    starringItem(id)
+  }
   return (
     <li className="item">
       <div className="ap-text-container">
@@ -15,7 +18,7 @@ const AppointmentItem = props => {
           {format(new Date({date}), 'dd MMMM yyyy, EEEE')}
         </p>
       </div>
-      <button type="button" className="star-button">
+      <button type="button" className="star-button" onClick={starItem}>
         <img src={url} className="star-icon" alt="star" />
       </button>
     </li>
